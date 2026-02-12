@@ -1,0 +1,263 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ============================================
+// GLOBAL RESET & BASE
+// ============================================
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-body;
+  font-weight: 400;
+  color: $color-warm-gray-800;
+  background-color: $color-warm-white;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: color $transition-fast;
+  &:hover { color: $color-primary-light; }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $font-display;
+  font-weight: 700;
+  line-height: 1.25;
+  color: $color-dark;
+}
+
+// ============================================
+// UTILITY CLASSES
+// ============================================
+.container {
+  @include container;
+}
+
+.section {
+  padding: $space-3xl 0;
+  @include respond-to(lg) { padding: $space-4xl 0; }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: $space-2xl;
+
+  .section-subtitle {
+    display: inline-block;
+    font-size: $font-size-sm;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $color-primary-light;
+    margin-bottom: $space-sm;
+    position: relative;
+    &::before, &::after {
+      content: '—';
+      margin: 0 $space-sm;
+      color: $color-accent;
+    }
+  }
+
+  .section-title {
+    font-size: $font-size-2xl;
+    @include respond-to(md) { font-size: $font-size-3xl; }
+    margin-bottom: $space-md;
+  }
+
+  .section-desc {
+    max-width: 640px;
+    margin: 0 auto;
+    color: $color-warm-gray-500;
+    font-size: $font-size-md;
+  }
+}
+
+.badge-organic {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: linear-gradient(135deg, $color-primary, $color-primary-light);
+  color: white;
+  font-size: $font-size-xs;
+  font-weight: 600;
+  border-radius: $radius-full;
+  letter-spacing: 0.5px;
+}
+
+.badge-region {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: $color-accent;
+  color: $color-dark;
+  font-size: $font-size-xs;
+  font-weight: 600;
+  border-radius: $radius-full;
+}
+
+.price-tag {
+  font-family: $font-display;
+  font-weight: 700;
+  color: $color-danger;
+  .old-price {
+    text-decoration: line-through;
+    color: $color-warm-gray-400;
+    font-weight: 400;
+    font-size: 0.85em;
+    margin-left: $space-sm;
+  }
+}
+
+// ============================================
+// CUSTOM PRIMEVUE OVERRIDES
+// ============================================
+.p-button {
+  font-family: $font-body;
+  font-weight: 600;
+  border-radius: $radius-md;
+  transition: all $transition-base;
+}
+
+.td-btn-primary {
+  background: linear-gradient(135deg, $color-primary, $color-primary-light) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 600;
+  &:hover {
+    background: linear-gradient(135deg, $color-primary-dark, $color-primary) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
+  }
+}
+
+.td-btn-accent {
+  background: linear-gradient(135deg, $color-accent, $color-accent-light) !important;
+  border: none !important;
+  color: $color-dark !important;
+  font-weight: 700;
+  &:hover {
+    background: linear-gradient(135deg, $color-accent-dark, $color-accent) !important;
+    transform: translateY(-1px);
+    box-shadow: $shadow-glow;
+  }
+}
+
+.td-btn-outline {
+  background: transparent !important;
+  border: 2px solid $color-primary !important;
+  color: $color-primary !important;
+  &:hover {
+    background: $color-primary !important;
+    color: white !important;
+  }
+}
+
+// ============================================
+// ANIMATIONS
+// ============================================
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 160, 23, 0.4); }
+  50% { box-shadow: 0 0 20px 5px rgba(212, 160, 23, 0.2); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease both;
+}
+
+.animate-stagger {
+  @for $i from 1 through 12 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.08}s;
+    }
+  }
+}
+
+// ============================================
+// SCROLLBAR
+// ============================================
+body {
+  @include scrollbar-thin;
+}
+
+// ============================================
+// PAGE TRANSITIONS
+// ============================================
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+// ============================================
+// TOAST CUSTOM
+// ============================================
+.p-toast-message {
+  border-radius: $radius-lg !important;
+  font-family: $font-body;
+}
