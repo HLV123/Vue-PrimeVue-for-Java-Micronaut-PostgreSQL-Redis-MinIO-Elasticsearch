@@ -1,2 +1,50 @@
 # Vue-PrimeVue-for-Java-Micronaut-PostgreSQL-Redis-MinIO-Elasticsearch
-Frontend này được thiết kế để mock data chạy độc lập , và khi backend xong, xóa 2 dòng code là kết nối thẳng qua REST API — JWT authentication, thanh toán VNPay/MoMo, không sửa gì thêm.
+Sàn thương mại điện tử kết nối trực tiếp người tiêu dùng với các hợp tác xã nông sản sạch, đặc sản vùng miền (có truy xuất nguồn gốc)
+<img src="ui/ui1.png" width="900"> 
+<img src="ui/ui2.png" width="900"> 
+<img src="ui/ui3.png" width="900"> 
+<img src="ui/ui4.png" width="900"> 
+<img src="ui/ui5.png" width="900"> 
+<img src="ui/ui6.png" width="900"> 
+<img src="ui/ui7.png" width="900"> 
+<img src="ui/ui8.png" width="900"> 
+<img src="ui/ui9.png" width="900"> 
+<img src="ui/ui10.png" width="900"> 
+<img src="ui/ui11.png" width="900"> 
+<img src="ui/ui12.png" width="900"> 
+<img src="ui/ui13.png" width="900"> 
+<img src="ui/ui14.png" width="900"> 
+<img src="ui/ui15.png" width="900"> 
+<img src="ui/ui16.png" width="900"> 
+<img src="ui/ui17.png" width="900"> 
+<img src="ui/ui18.png" width="900"> 
+<img src="ui/ui19.png" width="900"> 
+<img src="ui/ui20.png" width="900"> 
+<img src="ui/ui21.png" width="900"> 
+<img src="ui/ui22.png" width="900"> 
+<img src="ui/ui23.png" width="900"> 
+<img src="ui/ui24.png" width="900"> 
+<img src="ui/ui25.png" width="900"> 
+<img src="ui/ui26.png" width="900"> 
+<img src="ui/ui27.png" width="900"> 
+<img src="ui/ui28.png" width="900"> 
+<img src="ui/ui29.png" width="900"> 
+<img src="ui/ui30.png" width="900"> 
+<img src="ui/ui31.png" width="900"> 
+<img src="ui/ui32.png" width="900"> 
+<img src="ui/ui33.png" width="900"> 
+<img src="ui/ui34.png" width="900"> 
+<img src="ui/ui35.png" width="900"> 
+<img src="ui/ui36.png" width="900"> 
+<img src="ui/ui37.png" width="900"> 
+<img src="ui/ui38.png" width="900"> 
+<img src="ui/ui39.png" width="900"> 
+<img src="ui/ui40.png" width="900"> 
+<img src="ui/ui41.png" width="900"> 
+<img src="ui/ui42.png" width="900"> 
+<img src="ui/ui43.png" width="900"> 
+<img src="ui/ui44.png" width="900"> 
+<img src="ui/ui45.png" width="900"> 
+<img src="ui/ui46.png" width="900"> 
+<img src="ui/ui47.png" width="900"> 
+
